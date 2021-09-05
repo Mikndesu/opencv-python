@@ -27,7 +27,8 @@ def annotate_landmarks(im, landmarks):
 
 if __name__ == "__main__" :
     im=cv2.imread('Lenna.jpg')
-    cv2.imshow('result',annotate_landmarks(im,get_landmarks(im)))
+    detected_image = annotate_landmarks(im,get_landmarks(im))
+    cv2.imshow('result', detected_image)
     cv2.waitKey(0)
+    cv2.imwrite('result.jpg', detected_image)
     cv2.destroyAllWindows()
-
